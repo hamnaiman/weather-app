@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pakistan Weather App</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+  </script>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="backgroundContainer" class="transition-all duration-500 bg-gradient-to-b from-blue-200 to-white dark:from-gray-800 dark:to-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+  <!-- Background Effects -->
+  <div id="sunEffect"></div>
+  <div id="smokeEffect">
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+  </div>
+
+  <!-- Centered Container -->
+  <div class="flex flex-col items-center justify-center min-h-screen relative z-10 px-4">
+    <!-- Header with title and toggle button -->
+    <div class="w-full max-w-md flex justify-between items-center mb-6">
+      <h1 class="text-4xl font-bold drop-shadow-lg">Pakistan Weather App</h1>
+      <button id="themeToggle" class="relative w-12 h-12 rounded-full bg-yellow-300 dark:bg-blue-700 shadow-lg flex items-center justify-center focus:outline-none">
+        <!-- Sun Icon -->
+        <span id="sunIcon" class="absolute transition-opacity duration-500 text-2xl">☀️</span>
+        <!-- Moon Icon -->
+        <span id="moonIcon" class="absolute transition-opacity duration-500 text-2xl opacity-0">🌙</span>
+      </button>
+    </div>
+
+    <!-- Search Form -->
+    <div class="w-full max-w-md mb-6">
+      <form id="searchForm" class="flex">
+        <input type="text" id="cityInput" placeholder="Enter city (e.g., Karachi, Lahore, Islamabad)" class="flex-grow p-3 border border-gray-300 dark:border-gray-600 rounded-l focus:outline-none transition duration-300 ease-in-out" />
+        <button type="submit" class="bg-blue-500 text-white px-6 rounded-r hover:bg-blue-600 transition duration-300 ease-in-out">Search</button>
+      </form>
+    </div>
+
+    <!-- Weather Display -->
+    <div id="weatherDisplay" class="w-full max-w-md mb-6 space-y-4">
+      <!-- Weather info will be injected here -->
+    </div>
+
+    <!-- Hourly Forecast -->
+    <div id="hourlyForecast" class="w-full max-w-md">
+      <!-- Hourly forecast info will be injected here -->
+    </div>
+  </div>
+
+  
+  <script src="app.js"></script>
+</body>
+</html>
